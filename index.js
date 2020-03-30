@@ -145,11 +145,19 @@ app.post("/checkHash", (req, res) => {
           console.log(decodeURIComponent(req.body.token));
 
           axios
-            .post("https://avarjana.live/task/done/thadiya", {
-              teamCode: decodeURIComponent(req.body.token),
-              taskId: "ThadiSahan",
-              marks: 100
-            })
+            .post(
+              "https://avarjana.live/task/done/thadiya",
+              {
+                teamCode: decodeURIComponent(req.body.token),
+                taskId: "ThadiSahan",
+                marks: 100
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              }
+            )
             .then(function(response) {
               // console.log(response);
               if (response.status == 200) {
@@ -180,11 +188,19 @@ app.post("/checkHash", (req, res) => {
             });
         } else {
           axios
-            .post("https://avarjana.live/task/done/thadiya", {
-              teamCode: decodeURIComponent(req.body.token),
-              taskId: "ThadiSahan",
-              marks: 0
-            })
+            .post(
+              "https://avarjana.live/task/done/thadiya",
+              {
+                teamCode: decodeURIComponent(req.body.token),
+                taskId: "ThadiSahan",
+                marks: 0
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              }
+            )
             .then(function(response) {
               // console.log(response);
               if (response.status == 200) {
