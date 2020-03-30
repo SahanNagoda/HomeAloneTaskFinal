@@ -145,7 +145,7 @@ app.post("/checkHash", (req, res) => {
           console.log(decodeURIComponent(req.body.token));
 
           axios
-            .post("http://67.207.93.32:3000/task/done/thadiya", {
+            .post("https://avarjana.live/task/done/thadiya", {
               teamCode: decodeURIComponent(req.body.token),
               taskId: "ThadiSahan",
               marks: 100
@@ -180,7 +180,7 @@ app.post("/checkHash", (req, res) => {
             });
         } else {
           axios
-            .post("http://67.207.93.32:3000/task/done/thadiya", {
+            .post("https://avarjana.live/task/done/thadiya", {
               teamCode: decodeURIComponent(req.body.token),
               taskId: "ThadiSahan",
               marks: 0
